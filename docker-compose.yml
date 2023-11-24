@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: 'postgres:11'
+    volumes:
+       - ./db-data/postgres/:/var/lib/postgresql/data/
+    ports:
+       - "5432:5432"
+    # env_file:
+    #   - .env
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        POSTGRES_DB: book_service
+        JWT_TOKEN_LIFE: ${JWT_TOKEN_LIFE}
+        JWT_SECRET: ${JWT_SECRET}
+        GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+        GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+        # POSTGRES_USER: postgres
+        # POSTGRES_PASSWORD: password
+        # POSTGRES_DB: book_service
+
+        # JWT_TOKEN_LIFE: 2592000 
+        # JWT_SECRET: "YOUR_SECRET"
+        
+        # GOOGLE_SECRET_KEY: "{{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}}"
+        # GOOLE_CLIENT_ID: "{{339044681695-ua1c47nku56nmta7ckge5rbaggnkmtqs.apps.googleusercontent.com}}"
+        

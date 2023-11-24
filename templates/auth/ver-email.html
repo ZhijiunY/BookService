@@ -1,0 +1,14 @@
+{{define "content" }}
+<main>
+    <h2>{{ .title }}</h2>
+
+    {{if .message}}
+        <h4>{{.message}}</h4>
+    {{end}}
+    <form action="/verifyemail" method="POST">
+    <label for="name">Email:</label><br>
+    <input type="text" id="email" name="email" value="simba@gmail.com"><br>
+    <input type="submit" value="Submit">
+    </form> 
+</main>
+{{end}}

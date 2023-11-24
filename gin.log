@@ -1,0 +1,51 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/zhijiunY/BookService/routes.SetupRoutes.func1 (2 handlers)
+[GIN-debug] GET    /auth/getlogin            --> github.com/zhijiunY/BookService/controllers.GetLogin.func1 (2 handlers)
+[GIN-debug] GET    /auth/getregister         --> github.com/zhijiunY/BookService/controllers.GetRegister.func1 (2 handlers)
+[GIN-debug] GET    /auth/chgpsw              --> github.com/zhijiunY/BookService/controllers.GetChgpsw.func1 (2 handlers)
+[GIN-debug] GET    /auth/fgtpsw              --> github.com/zhijiunY/BookService/controllers.GetFgtpsw.func1 (2 handlers)
+[GIN-debug] GET    /auth/succRegister        --> github.com/zhijiunY/BookService/controllers.SuccRegister.func1 (2 handlers)
+[GIN-debug] GET    /auth/succLogin           --> github.com/zhijiunY/BookService/controllers.SuccLogin.func1 (2 handlers)
+[GIN-debug] GET    /auth/login               --> github.com/zhijiunY/BookService/controllers.Login.func1 (2 handlers)
+[GIN-debug] POST   /auth/register            --> github.com/zhijiunY/BookService/controllers.Register.func1 (2 handlers)
+[GIN-debug] POST   /auth/login               --> github.com/zhijiunY/BookService/controllers.Login.func1 (2 handlers)
+[GIN-debug] POST   /auth/googleOAuth         --> github.com/zhijiunY/BookService/controllers.GoogleOAuth.func1 (2 handlers)
+[GIN-debug] POST   /auth/gitHubOAuth         --> github.com/zhijiunY/BookService/controllers.GitHubOAuth.func1 (2 handlers)
+[GIN-debug] DELETE /auth/logout              --> github.com/zhijiunY/BookService/controllers.Logout.func1 (2 handlers)
+[GIN-debug] GET    /users/                   --> github.com/zhijiunY/BookService/controllers.GetUsers.func1 (2 handlers)
+[GIN-debug] POST   /users/                   --> github.com/zhijiunY/BookService/controllers.CreateUser.func1 (2 handlers)
+[GIN-debug] PUT    /users/:id                --> github.com/zhijiunY/BookService/controllers.UpdateUser.func1 (2 handlers)
+[GIN-debug] DELETE /users/:id                --> github.com/zhijiunY/BookService/controllers.DeleteUser.func1 (2 handlers)
+[GIN-debug] GET    /book/                    --> github.com/zhijiunY/BookService/controllers.Getbook.func1 (2 handlers)
+[GIN-debug] POST   /book/                    --> github.com/zhijiunY/BookService/controllers.Createbook.func1 (2 handlers)
+[GIN-debug] PUT    /book/:id                 --> github.com/zhijiunY/BookService/controllers.Updatebook.func1 (2 handlers)
+[GIN-debug] DELETE /book/:id                 --> github.com/zhijiunY/BookService/controllers.Deletebook.func1 (2 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (2 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8000
+[GIN] 2023/09/11 - 17:01:02 | 200 |    1.776901ms |             ::1 | GET      "/"
+[GIN] 2023/09/11 - 17:01:02 | 404 |         261ns |             ::1 | GET      "/apple-touch-icon-precomposed.png"
+[GIN] 2023/09/11 - 17:01:02 | 404 |         309ns |             ::1 | GET      "/apple-touch-icon.png"
+[GIN] 2023/09/11 - 17:01:11 | 200 |    1.203085ms |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:07:12 | 200 |     928.652µs |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:08:06 | 200 |    1.003104ms |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:08:32 | 200 |     970.958µs |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:08:53 | 200 |     990.108µs |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:08:56 | 200 |     563.126µs |             ::1 | GET      "/auth/getregister"
+[GIN] 2023/09/11 - 17:09:10 | 200 |     622.708µs |             ::1 | GET      "/auth/getregister"
+[GIN] 2023/09/11 - 17:09:15 | 200 |     982.127µs |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:10:24 | 200 |      853.97µs |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:11:15 | 200 |    1.317202ms |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:11:53 | 200 |     813.873µs |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:11:53 | 404 |         338ns |             ::1 | GET      "/docs/5.3/dist/css/bootstrap.min.css"
+[GIN] 2023/09/11 - 17:11:53 | 404 |         371ns |             ::1 | GET      "/docs/5.3/dist/js/bootstrap.bundle.min.js"
+[GIN] 2023/09/11 - 17:11:55 | 303 |     4.22032ms |             ::1 | POST     "/auth/login"
+[GIN] 2023/09/11 - 17:11:55 | 404 |         316ns |             ::1 | GET      "/docs/5.3/dist/css/bootstrap.min.css"
+[GIN] 2023/09/11 - 17:11:55 | 404 |         695ns |             ::1 | GET      "/docs/5.3/dist/js/bootstrap.bundle.min.js"
+[GIN] 2023/09/11 - 17:11:59 | 200 |     625.154µs |             ::1 | GET      "/auth/getlogin"
+[GIN] 2023/09/11 - 17:11:59 | 404 |         315ns |             ::1 | GET      "/docs/5.3/dist/css/bootstrap.min.css"
+[GIN] 2023/09/11 - 17:11:59 | 404 |         393ns |             ::1 | GET      "/docs/5.3/dist/js/bootstrap.bundle.min.js"
