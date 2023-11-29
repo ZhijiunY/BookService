@@ -1,18 +1,10 @@
 package controllers
 
 import (
-	"context"
-	"crypto/rand"
-	"encoding/base64"
-	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
 	"os"
-	"time"
 
-	"golang.org/x/oauth2"
 	_ "github.com/joho/godotenv/autoload"
+	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 )
 
@@ -27,50 +19,49 @@ var googleOauthConfig = &oauth2.Config{
 
 const oauthGoogleUrlAPI = "https://www.googleapis.com/oauth2/v2/userinfo?access_token="
 
-func GoogleOAuth()gin.HandlerFunc {
-	return func(c *gin.Context){
-		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
-		defer cancel()
-		ctx.Done()
+// // func GoogleOAuth()gin.HandlerFunc {
+// // 	return func(c *gin.Context){
+// // 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
+// // 		defer cancel()
+// // 		ctx.Done()
 
-}
+// // }
 
-func OauthGoogleCallback() gin.HandlerFunc {
-	return func(c *gin.Context){
-		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
-		defer cancel()
-		ctx.Done()
-	
-	
-}
+// // func OauthGoogleCallback() gin.HandlerFunc {
+// // 	return func(c *gin.Context){
+// // 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
+// // 		defer cancel()
+// // 		ctx.Done()
 
-func generateStateOauthCookie(w http.ResponseWriter) string {
-	var expiration = time.Now().Add(20 * time.Minute)
+// // }
 
-	b := make([]byte, 16)
-	rand.Read(b)
-	state := base64.URLEncoding.EncodeToString(b)
-	cookie := http.Cookie{Name: "oauthstate", Value: state, Expires: expiration}
-	http.SetCookie(w, &cookie)
+// // func generateStateOauthCookie(w http.ResponseWriter) string {
+// // 	var expiration = time.Now().Add(20 * time.Minute)
 
-	return state
-}
+// // 	b := make([]byte, 16)
+// // 	rand.Read(b)
+// // 	state := base64.URLEncoding.EncodeToString(b)
+// // 	cookie := http.Cookie{Name: "oauthstate", Value: state, Expires: expiration}
+// // 	http.SetCookie(w, &cookie)
 
-func getUserDataFromGoogle(code string) ([]byte, error) {
-	// Use code to get token and get user info from Google.
+// // 	return state
+// // }
 
-	token, err := googleOauthConfig.Exchange(context.Background(), code)
-	if err != nil {
-		return nil, fmt.Errorf("code exchange wrong: %s", err.Error())
-	}
-	response, err := http.Get(oauthGoogleUrlAPI + token.AccessToken)
-	if err != nil {
-		return nil, fmt.Errorf("failed getting user info: %s", err.Error())
-	}
-	defer response.Body.Close()
-	contents, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		return nil, fmt.Errorf("failed read response: %s", err.Error())
-	}
-	return contents, nil
-}
+// // func getUserDataFromGoogle(code string) ([]byte, error) {
+// // 	// Use code to get token and get user info from Google.
+
+// // 	token, err := googleOauthConfig.Exchange(context.Background(), code)
+// // 	if err != nil {
+// // 		return nil, fmt.Errorf("code exchange wrong: %s", err.Error())
+// // 	}
+// // 	response, err := http.Get(oauthGoogleUrlAPI + token.AccessToken)
+// // 	if err != nil {
+// // 		return nil, fmt.Errorf("failed getting user info: %s", err.Error())
+// 	}
+// 	defer response.Body.Close()
+// 	contents, err := ioutil.ReadAll(response.Body)
+// 	if err != nil {
+// 		return nil, fmt.Errorf("failed read response: %s", err.Error())
+// 	}
+// 	return contents, nil
+// }

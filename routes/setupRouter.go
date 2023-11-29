@@ -37,8 +37,8 @@ func SetupRoutes(router *gin.Engine, db *gorm.DB) {
 
 		auth.POST("/register", controller.Register())
 		auth.POST("/login", controller.Login())
-		auth.POST("/googleOAuth", controller.GoogleOAuth())
-		auth.POST("/gitHubOAuth", controller.GitHubOAuth())
+		// auth.POST("/googleOAuth", controller.GoogleOAuth())
+		// auth.POST("/gitHubOAuth", controller.GitHubOAuth())
 
 		auth.DELETE("/logout", controller.Logout())
 
